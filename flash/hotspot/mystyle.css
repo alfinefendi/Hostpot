@@ -1,6 +1,8 @@
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -17,16 +19,16 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1920px;
     display: flex;
     justify-content: space-between;
-    text-align: center;
     margin: auto;
 }
 
 .ilt {
-    background: #cacaca;
-    width: 1000px;
+    background: #ffffff;
+    width: 1600px;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,38 +40,128 @@ body {
     height: 100%;
 }
 
+#myvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+ }
+
+
 .formulir {
-    background: #ffffff;
-    width: 400px;
+    position: fixed;
     display: flex;
-    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    left: 0;
+    bottom: 0;
+    background-color: #f7f5f5;
+    width: 20%;
+    height: 100vh;
+    padding: 20px;
+
+}
+.cta {
+    margin-bottom: 3em;
+}
+.cta h3 {
+    font-size: 1.2rem;
+    color: #424141;
+    margin-bottom: .5em;
+}
+
+.cta p {
+    font-size: .8rem;
 }
 
 .user-input {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-label {
+
+.user-input label {
     font-size: .8rem;
 }
 
-
-
-
-
-
-.form {
+.user-input input {
     width: 100%;
-    text-align: center;
-    margin: auto;
+    border: none;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 5px;
+    margin: .4em 0;
+    padding: .5em;
 }
 
+.user-input button {
+    margin-top: .4em;
+    border: 1px solid white;
+    outline: 1px solid slateblue;
+    padding: 10px 15px;
+    background-color: slateblue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: .9;
+}
 
 .essential {
+    opacity: 0;
     position: absolute;
     top: 0;
     right: 0;
-    opacity: .5;
+}
+
+@media (min-width: 0px) and (max-width: 700px){
+    .formulir {
+        width: 45%;
+    }
+    .cta h3 {
+        font-size: .8rem;
+    }
+    .cta p {
+        font-size: .6rem;
+    }
+
+    .user-input input {
+        padding: 4px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px){
+    .formulir {
+        width: 35%;
+    }
+    .cta h3 {
+        font-size: 1rem;
+    }
+    .cta p {
+        font-size: .6rem;
+    }
+
+    .user-input input {
+        padding: 4px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1400px){
+    .formulir {
+        width: 25%;
+    }
+    .cta h3 {
+        font-size: 1rem;
+    }
+    .cta p {
+        font-size: .6rem;
+    }
+
+    .user-input input {
+        padding: 4px;
+    }
 }

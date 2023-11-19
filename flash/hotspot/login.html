@@ -9,129 +9,110 @@
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
 <link rel="stylesheet" href="mystyle.css">
 
-</head>
+</head>`
 
 <body>
 	<div class="container">
 
-		<div class="ilt">
-			<video muted autoplay loop>
+		<div id="ilt">
+			<video autoplay loop id="myvideo">
 				<source src="video/naruto.mp4.mp4" type="video/mp4">
 			  </video>
-			
 		</div>
-
+		
 		<div class="formulir">
+			<div class="cta">
+			<h3>Selamat Datang !</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consectetur autem veniam consequuntur inventore.</p>
+			</div>
+			<form name="login" action="$(link-login-only)" method="post"
+			$(if chap-id) onSubmit="return doLogin()" $(endif)>
 			<div class="user-input">
+				<input type="hidden" name="dst" value="$(link-orig)" />
+				<input type="hidden" name="popup" value="true" />
 				<div class="username-box">
-					<label>Username :</label>
-					<input type="text" class="username-field">
+					<label for="username">Username :</label>
+					<input type="text" name="username" class="username-input" ctype="text" value="$(username)"/>
 				</div>
 				<div class="password-box">
-					<label>Password :</label>
-					<input type="text" class="password-field">
+					<label for="password">Password :</label>
+					<input type="text" name="password"  class="password-input" type="password"/>
 				</div>
-				<button>Connect</button>
+				<button type="submit" id="connect-btn">Connect</button>
 			</div>
-
-		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-<div class="essential">
-	<form name="sendin" action="$(link-login-only)" method="post">
-		<input type="hidden" name="username" />
-		<input type="hidden" name="password" />
-		<input type="hidden" name="dst" value="$(link-orig)" />
-		<input type="hidden" name="popup" value="true" />
-	</form>
+		</form>
 		
-	
-	<script type="text/javascript" src="/md5.js"></script>
-	<script type="text/javascript">
-	<!--
-	    function doLogin() {
-		document.sendin.username.value = document.login.username.value;
-		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
-		document.sendin.submit();
-		return false;
-	    }
-	//-->
-	</script>
-$(endif)
-<div class="notice" style="color: #c1c1c1; font-size: 9px"><a style="color: #FF8080"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</div><br />
-<div class="form">
-	<form name="login" action="$(link-login-only)" method="post"
-	$(if chap-id) onSubmit="return doLogin()" $(endif)>
-	<input type="hidden" name="dst" value="$(link-orig)" />
-	<input type="hidden" name="popup" value="true" />
-	<input style="width: 80px" name="username" class="username-input" ctype="text" value="$(username)"/>
-	<input style="width: 80px" name="password"  class="password-input" type="password"/>
-	<input type="submit" value="OK" />
-	</form>
-</div>
+		
+		
+		
 
-$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
-<script type="text/javascript">
-<!--
-  document.login.username.focus();
-//-->
-</script>
+
+
+
+
+		<div class="essential">
+
+		<div class="notice" style="color: #c1c1c1; font-size: 9px"><a style="color: #FF8080"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</div>
+	
+		$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
+		<script type="text/javascript">
+		  document.login.username.focus();
+		</script>
+		<form name="sendin" action="$(link-login-only)" method="post">
+			<input type="hidden" name="username" />
+			<input type="hidden" name="password" />
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
+		</form>
+		<script type="text/javascript" src="/md5.js"></script>
+		<script type="text/javascript">
+		<!--
+			function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+			document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+			document.sendin.submit();
+			return false;
+			}
+		//-->
+		</script>
+		$(endif)
+
+			<!-- <div class="form">
+			<form name="login" action="$(link-login-only)" method="post"
+			$(if chap-id) onSubmit="return doLogin()" $(endif)>
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
+			<input style="width: 80px" name="username" class="username-input" ctype="text" value="$(username)"/>
+			<input style="width: 80px" name="password"  class="password-input" type="password"/>
+			<input type="submit" value="OK" class="submit-input"/>
+			</form>
+		</div> -->
+		</div>
+		
+			
+			
+		</div>
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
+<script src="myscript.js"></script>
 </body>
 </html>
